@@ -11731,4 +11731,33 @@ html {
     width: 1.5vw;
     left: -2vw;
   }
+  /* DARK MODE */
+  .dark-mode {
+    background-color: #121212;
+    color: white;
+  }
+
+  .dark-mode .bg-light {
+    background-color: #1e1e1e !important;
+  }
+
+  .dark-mode .card {
+    background-color: #2a2a2a;
+    color: white;
+  }
+
+  /* PAGE LOAD EFFECT */
+  body {
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+
+  body.loaded {
+    opacity: 1;
+  }
+
+  /* NAVBAR SHADOW */
+  .navbar.shadow {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
 }
