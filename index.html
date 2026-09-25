@@ -2,743 +2,236 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Vamsi Krishna Konidala — DevOps Engineer specializing in AWS, Kubernetes, Docker, Terraform and CI/CD." />
     <title>Vamsi Krishna Konidala | DevOps Engineer</title>
 
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
-
-    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet"
-    />
-
-    <!-- Bootstrap Icons -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
-        rel="stylesheet"
-    />
-
-    <!-- Main CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
 
-    <!-- =====================================================
-         CUSTOM PROFILE ANNOTATION CSS
-         ===================================================== -->
     <style>
+        /* Homepage redesign — scoped so the other portfolio pages remain unchanged. */
+        :root { --v-primary:#2543ff; --v-purple:#7434d9; --v-pink:#df168f; --v-ink:#172033; --v-muted:#657085; --v-soft:#f6f8ff; }
+        .home-v2 { font-family:"Plus Jakarta Sans",sans-serif; color:var(--v-ink); background:#fff; overflow:hidden; }
+        .home-v2 .nav-v2 { background:rgba(255,255,255,.92); backdrop-filter:blur(14px); border-bottom:1px solid rgba(20,30,60,.06); }
+        .home-v2 .nav-v2 .navbar-brand { color:var(--v-primary); letter-spacing:-.02em; }
+        .home-v2 .nav-v2 .nav-link { color:#5e6677; font-weight:600; }
+        .home-v2 .nav-v2 .nav-link:hover,.home-v2 .nav-v2 .nav-link.active { color:var(--v-primary); }
+        .home-v2 .theme-btn { border:1px solid #d8dce7; border-radius:10px; background:#fff; width:42px; height:38px; }
 
-        /* Profile container */
-        .profile {
-            position: relative !important;
-        }
+        .hero-v2 { position:relative; background:radial-gradient(circle at 83% 25%,rgba(112,79,255,.12),transparent 24%),linear-gradient(180deg,#fff 0%,#f8faff 100%); padding:72px 0 30px; }
+        .hero-v2:before { content:""; position:absolute; width:260px; height:260px; right:-100px; top:-80px; border-radius:50%; background:rgba(37,67,255,.07); }
+        .hero-copy { position:relative; z-index:2; }
+        .eyebrow-v2 { display:inline-flex; align-items:center; gap:7px; padding:7px 12px; border-radius:999px; color:#fff; background:linear-gradient(90deg,var(--v-primary),var(--v-pink)); font-size:.73rem; font-weight:800; letter-spacing:.02em; }
+        .hero-v2 h1 { font-size:clamp(2.7rem,5.5vw,5rem); line-height:1.02; letter-spacing:-.055em; font-weight:800; margin:14px 0 10px; }
+        .gradient-text { background:linear-gradient(90deg,var(--v-primary),var(--v-purple),var(--v-pink)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+        .hero-role { font-size:1.45rem; font-weight:600; color:#5f6878; min-height:35px; }
+        .hero-desc { max-width:620px; color:var(--v-muted); font-size:1rem; line-height:1.8; }
+        .hero-actions .btn { border-radius:12px; padding:13px 23px; font-weight:700; }
+        .btn-v-primary { background:linear-gradient(90deg,var(--v-primary),#4f35e8); border:0; color:#fff; }
+        .btn-v-primary:hover { color:#fff; transform:translateY(-1px); }
+        .btn-v-outline { border:1px solid #9ca4b4; background:#fff; color:#252b37; }
+        .skill-links { display:flex; gap:24px; flex-wrap:wrap; margin-top:24px; }
+        .skill-links div { text-align:center; color:#4f5869; font-size:.78rem; font-weight:600; }
+        .skill-links i { display:block; color:var(--v-primary); font-size:1.55rem; margin-bottom:5px; }
 
-        /*
-         * Handwritten DevOps Engineer label
-         */
-        .devops-annotation {
-            position: absolute;
-            right: -145px;
-            top: 25%;
-            width: 190px;
-            z-index: 20;
-            pointer-events: none;
-        }
+        .portrait-wrap { position:relative; max-width:570px; margin:auto; min-height:520px; display:flex; align-items:flex-end; justify-content:center; }
+        .portrait-panel { position:absolute; width:78%; height:82%; right:7%; top:7%; border-radius:54px 54px 90px 54px; background:linear-gradient(135deg,#293bff 0%,#7532d5 55%,#e21a92 100%); box-shadow:0 28px 70px rgba(63,47,190,.20); }
+        .portrait-panel:after { content:""; position:absolute; inset:20px; border:1px solid rgba(255,255,255,.16); border-radius:40px 40px 70px 40px; }
+        .portrait-img { position:relative; z-index:2; width:min(100%,560px); height:560px; object-fit:contain; object-position:center bottom; filter:drop-shadow(0 24px 24px rgba(17,27,60,.16)); }
+        .float-chip { position:absolute; z-index:3; display:flex; align-items:center; gap:10px; padding:12px 16px; border-radius:15px; background:rgba(255,255,255,.94); box-shadow:0 15px 40px rgba(26,38,78,.13); font-size:.76rem; font-weight:700; }
+        .float-chip i { color:var(--v-primary); font-size:1.2rem; }
+        .chip-one { right:0; top:15%; } .chip-two { left:0; bottom:20%; }
 
-        .devops-text {
-            font-family: "Comic Sans MS",
-                         "Segoe Print",
-                         "Bradley Hand",
-                         cursive;
+        .stats-v2 { position:relative; z-index:5; margin-top:-12px; }
+        .stats-card { background:rgba(255,255,255,.95); border:1px solid #edf0f7; border-radius:22px; box-shadow:0 18px 50px rgba(35,48,90,.09); padding:20px 24px; }
+        .stat-item { display:flex; align-items:center; gap:12px; min-height:58px; }
+        .stat-icon { width:46px; height:46px; border-radius:14px; display:grid; place-items:center; background:#eef2ff; color:var(--v-primary); font-size:1.2rem; }
+        .stat-number { font-size:1.35rem; font-weight:800; } .stat-label { font-size:.73rem; color:var(--v-muted); }
 
-            font-size: 25px;
-            font-weight: 600;
-            font-style: italic;
+        .section-v2 { padding:90px 0; }
+        .section-soft { background:linear-gradient(180deg,#f8faff,#f4f7ff); }
+        .section-kicker { color:var(--v-primary); font-size:.76rem; font-weight:800; letter-spacing:.16em; text-transform:uppercase; }
+        .section-title { font-size:clamp(2rem,4vw,3.2rem); font-weight:800; letter-spacing:-.045em; }
+        .about-copy { color:var(--v-muted); line-height:1.85; }
+        .feature-card { height:100%; padding:25px; border-radius:20px; background:#fff; border:1px solid #e9edf7; box-shadow:0 12px 35px rgba(25,40,80,.06); transition:.2s ease; }
+        .feature-card:hover,.project-card:hover { transform:translateY(-4px); box-shadow:0 18px 45px rgba(25,40,80,.1); }
+        .feature-icon { width:48px; height:48px; display:grid; place-items:center; border-radius:14px; background:linear-gradient(135deg,#eaf0ff,#f5eaff); color:var(--v-primary); font-size:1.35rem; margin-bottom:16px; }
+        .feature-card h3 { font-size:1rem; font-weight:800; } .feature-card p { color:var(--v-muted); font-size:.83rem; line-height:1.65; margin:0; }
 
-            color: #6f42c1;
+        .tech-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:14px; margin-top:35px; }
+        .tech-item { background:#fff; border:1px solid #e8ecf5; border-radius:17px; padding:18px 10px; text-align:center; box-shadow:0 8px 25px rgba(20,30,70,.04); }
+        .tech-item i { font-size:1.7rem; color:var(--v-primary); display:block; margin-bottom:8px; } .tech-item span { font-size:.72rem; font-weight:700; color:#586174; }
 
-            transform: rotate(-7deg);
+        .project-card { height:100%; background:#fff; border:1px solid #e8ecf5; border-radius:20px; padding:26px; transition:.2s ease; }
+        .project-card .project-icon { width:50px; height:50px; display:grid; place-items:center; border-radius:14px; background:#eef2ff; color:var(--v-primary); font-size:1.35rem; margin-bottom:18px; }
+        .project-card h3 { font-size:1rem; font-weight:800; } .project-card p { color:var(--v-muted); font-size:.83rem; line-height:1.65; }
+        .tag { display:inline-block; border:1px solid #dbe1f2; background:#f8faff; color:#3152d8; border-radius:999px; padding:5px 9px; font-size:.67rem; font-weight:700; margin:2px; }
 
-            white-space: nowrap;
+        .status-v2 { background:linear-gradient(100deg,#eaf2ff,#f7edff); border:1px solid #dce3fa; border-radius:22px; padding:25px; }
+        .status-dot { display:inline-block; width:9px; height:9px; border-radius:50%; background:#18b95b; margin-right:7px; box-shadow:0 0 0 5px rgba(24,185,91,.10); }
+        .status-row { display:flex; justify-content:center; gap:35px; flex-wrap:wrap; color:#4f5869; font-size:.8rem; font-weight:600; }
 
-            text-shadow:
-                0.5px 0.5px 0px rgba(0,0,0,0.08);
-        }
+        .cta-v2 { background:linear-gradient(100deg,#253fff,#7835d8,#dd168e); color:#fff; border-radius:28px; padding:44px 48px; position:relative; overflow:hidden; }
+        .cta-v2:after { content:""; position:absolute; width:250px; height:250px; border:1px solid rgba(255,255,255,.2); border-radius:50%; right:-60px; top:-110px; }
+        .footer-v2 { border-top:1px solid #eef0f5; }
 
-        /*
-         * Curved arrow
-         */
-        .devops-arrow {
-            width: 150px;
-            height: 90px;
-            margin-top: -5px;
-            margin-left: -25px;
-            overflow: visible;
-        }
-
-        .devops-arrow path {
-            fill: none;
-            stroke: #6f42c1;
-            stroke-width: 2.5;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        /*
-         * Arrow head
-         */
-        .devops-arrow polygon {
-            fill: #6f42c1;
-        }
-
-        /*
-         * Small handwritten underline
-         */
-        .devops-underline {
-            width: 145px;
-            height: 12px;
-            margin-top: -14px;
-            margin-left: 5px;
-        }
-
-        .devops-underline path {
-            fill: none;
-            stroke: #6f42c1;
-            stroke-width: 2;
-            stroke-linecap: round;
-        }
-
-
-        /* =====================================================
-           DARK MODE SUPPORT
-           ===================================================== */
-
-        body.dark-mode .devops-text {
-            color: #b58cff;
-        }
-
-        body.dark-mode .devops-arrow path {
-            stroke: #b58cff;
-        }
-
-        body.dark-mode .devops-arrow polygon {
-            fill: #b58cff;
-        }
-
-        body.dark-mode .devops-underline path {
-            stroke: #b58cff;
-        }
-
-
-        /* =====================================================
-           MOBILE RESPONSIVE
-           ===================================================== */
-
-        @media (max-width: 1199px) {
-
-            .devops-annotation {
-                right: -125px;
-            }
-
-        }
-
-        @media (max-width: 991px) {
-
-            .devops-annotation {
-                right: -100px;
-                top: 28%;
-            }
-
-            .devops-text {
-                font-size: 22px;
-            }
-
-        }
-
-        @media (max-width: 767px) {
-
-            /*
-             * On mobile, move the annotation below
-             * the profile image instead of beside it.
-             */
-            .devops-annotation {
-                position: absolute;
-
-                top: auto;
-                right: 50%;
-
-                transform: translateX(50%);
-
-                bottom: -105px;
-
-                width: 190px;
-
-                text-align: center;
-            }
-
-            .devops-text {
-                font-size: 22px;
-            }
-
-            .devops-arrow {
-                transform: rotate(90deg);
-                margin-left: 20px;
-                margin-top: -5px;
-            }
-
-            .devops-underline {
-                margin-left: 20px;
-            }
-
-        }
-
+        @media (max-width: 991.98px) { .hero-v2 { padding-top:45px; } .portrait-wrap { min-height:470px; margin-top:35px; } .portrait-img { height:500px; } .tech-grid { grid-template-columns:repeat(4,1fr); } }
+        @media (max-width: 767.98px) { .hero-v2 { padding-top:30px; } .hero-v2 h1 { font-size:2.8rem; } .portrait-wrap { min-height:400px; } .portrait-img { height:430px; } .portrait-panel { width:84%; right:8%; } .chip-one { right:-5px; } .chip-two { left:-5px; } .stats-card { padding:12px; } .stat-item { padding:8px; } .tech-grid { grid-template-columns:repeat(3,1fr); } .section-v2 { padding:65px 0; } .cta-v2 { padding:34px 25px; } }
+        @media (max-width: 480px) { .tech-grid { grid-template-columns:repeat(2,1fr); } .skill-links { gap:17px; } .hero-actions .btn { width:100%; } .portrait-wrap { min-height:350px; } .portrait-img { height:380px; } }
+        body.dark-mode .home-v2 { background:#0e1220; color:#f3f5fb; } body.dark-mode .home-v2 .nav-v2 { background:rgba(14,18,32,.92); } body.dark-mode .home-v2 .nav-v2 .nav-link { color:#c8cede; } body.dark-mode .hero-v2,body.dark-mode .section-soft { background:#111626; } body.dark-mode .feature-card,body.dark-mode .project-card,body.dark-mode .tech-item,body.dark-mode .stats-card { background:#171d30; border-color:#27304a; } body.dark-mode .about-copy,body.dark-mode .project-card p,body.dark-mode .feature-card p,body.dark-mode .tech-item span { color:#aeb8cc; } body.dark-mode .btn-v-outline,body.dark-mode .theme-btn { background:#171d30; color:#fff; border-color:#3b4560; }
     </style>
 </head>
 
-
 <body class="d-flex flex-column h-100">
+<main class="flex-shrink-0 home-v2">
 
-<main class="flex-shrink-0">
-
-    <!-- =====================================================
-         NAVIGATION
-         ===================================================== -->
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
-
-        <div class="container px-5">
-
-            <a class="navbar-brand" href="index.html">
-                <span class="fw-bolder text-primary">
-                    VAMSI KRISHNA KONIDALA
-                </span>
-            </a>
-
-
-            <!-- Mobile menu button -->
-
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
-
-                <span class="navbar-toggler-icon"></span>
-
-            </button>
-
-
-            <!-- Dark mode button -->
-
-            <button
-                onclick="toggleDark()"
-                class="btn btn-outline-dark ms-3"
-                type="button">
-
-                🌙
-
-            </button>
-
-
-            <!-- Navigation links -->
-
-            <div
-                class="collapse navbar-collapse"
-                id="navbarSupportedContent">
-
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">
-                            Home
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="resume.html">
-                            Resume
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="projects.html">
-                            Projects
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">
-                            Contact
-                        </a>
-                    </li>
-
-                </ul>
-
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg nav-v2 py-3 sticky-top">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand fw-bolder" href="index.html">VAMSI KRISHNA KONIDALA</a>
+            <div class="d-flex align-items-center gap-2 order-lg-2">
+                <button onclick="toggleDark()" class="theme-btn" aria-label="Toggle dark mode">🌙</button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             </div>
-
+            <div class="collapse navbar-collapse order-lg-1" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder gap-lg-2">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
         </div>
-
     </nav>
 
-
-    <!-- =====================================================
-         HERO SECTION
-         ===================================================== -->
-
-    <header class="py-5">
-
-        <div class="container px-5 pb-5">
-
-            <div class="row gx-5 align-items-center">
-
-
-                <!-- =================================================
-                     LEFT SIDE
-                     ================================================= -->
-
-                <div class="col-xxl-5">
-
-                    <div class="text-center text-xxl-start">
-
-
-                        <!-- Technology badge -->
-
-                        <div class="badge bg-gradient-primary-to-secondary text-white mb-4">
-
-                            <div class="text-uppercase">
-
-                                AWS · Kubernetes · Docker · Terraform · CI/CD
-
-                            </div>
-
-                        </div>
-
-
-                        <!-- Greeting -->
-
-                        <div class="fs-3 fw-light text-muted">
-
-                            Hi, I am
-
-                        </div>
-
-
-                        <!-- Name -->
-
-                        <h1 class="display-4 fw-bolder mb-3">
-
-                            <span
-                                class="text-gradient d-inline"
-                                style="white-space: nowrap;">
-
-                                VAMSI KRISHNA
-
-                            </span>
-
-                        </h1>
-
-
-                        <!-- Typing effect -->
-
-                        <h3 class="fw-light text-muted mb-4">
-
-                            <span id="typing-text"></span>
-
-                        </h3>
-
-
-                        <!-- Buttons -->
-
-                        <div
-                            class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
-
-                            <a
-                                class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder"
-                                href="resume.html">
-
-                                Resume
-
-                            </a>
-
-
-                            <a
-                                class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder"
-                                href="projects.html">
-
-                                Projects
-
-                            </a>
-
-                        </div>
-
-
-                        <!-- Technology icons -->
-
-                        <div class="mt-4 fs-2">
-
-                            <i class="bi bi-cloud text-primary me-3"></i>
-
-                            <i class="bi bi-box-seam text-primary me-3"></i>
-
-                            <i class="bi bi-diagram-3 text-primary me-3"></i>
-
-                            <i class="bi bi-gear text-primary"></i>
-
-                        </div>
-
+    <!-- Hero -->
+    <header class="hero-v2">
+        <div class="container px-4 px-lg-5">
+            <div class="row align-items-center g-4 g-xl-5">
+                <div class="col-lg-6 hero-copy">
+                    <div class="eyebrow-v2"><i class="bi bi-cloud-check"></i> AWS · KUBERNETES · DOCKER · TERRAFORM · CI/CD</div>
+                    <div class="fs-3 fw-light text-secondary mt-4">Hi, I'm</div>
+                    <h1><span class="gradient-text">VAMSI KRISHNA</span></h1>
+                    <div class="hero-role"><span id="typing-text">DevOps Engineer</span></div>
+                    <p class="hero-desc mt-3">Building scalable cloud infrastructure and automation for modern applications.</p>
+                    <div class="hero-actions d-flex flex-wrap gap-3 mt-4">
+                        <a class="btn btn-v-primary" href="assets/resume/Vamsi_Krishna_Konidala_Resume.pdf" download><i class="bi bi-download me-2"></i>Download Resume</a>
+                        <a class="btn btn-v-outline" href="projects.html"><i class="bi bi-folder2-open me-2"></i>View Projects</a>
                     </div>
-
-                </div>
-
-
-                <!-- =================================================
-                     RIGHT SIDE - PROFILE
-                     ================================================= -->
-
-                <div class="col-xxl-7">
-
-                    <div class="d-flex justify-content-center mt-5 mt-xxl-0">
-
-                        <div class="profile bg-gradient-primary-to-secondary">
-
-
-                            <!-- Profile image -->
-
-                            <img
-                                class="profile-img"
-                                src="assets/profile.png"
-                                alt="Vamsi Krishna Konidala - DevOps Engineer"
-                            />
-
-
-                            <!-- Decorative dots -->
-
-                            <div class="dots-1"></div>
-
-                            <div class="dots-2"></div>
-
-                            <div class="dots-3"></div>
-
-                            <div class="dots-4"></div>
-
-
-                            <!-- =================================================
-                                 HANDWRITTEN DEVOPS ENGINEER ANNOTATION
-                                 ================================================= -->
-
-                            <div class="devops-annotation">
-
-                                <div class="devops-text">
-                                    DevOps Engineer
-                                </div>
-
-
-                                <!-- Curved arrow -->
-
-                                <svg
-                                    class="devops-arrow"
-                                    viewBox="0 0 150 90"
-                                    xmlns="http://www.w3.org/2000/svg">
-
-                                    <path
-                                        d="M 15 10
-                                           C 75 5, 135 20, 125 65
-                                           C 120 78, 105 82, 92 76" />
-
-                                    <polygon
-                                        points="88,69 91,82 103,76" />
-
-                                </svg>
-
-
-                                <!-- Handwritten underline -->
-
-                                <svg
-                                    class="devops-underline"
-                                    viewBox="0 0 150 12"
-                                    xmlns="http://www.w3.org/2000/svg">
-
-                                    <path
-                                        d="M 5 7
-                                           C 35 2, 95 11, 145 5" />
-
-                                </svg>
-
-                            </div>
-
-                        </div>
-
+                    <div class="skill-links">
+                        <div><i class="bi bi-cloud"></i>AWS</div>
+                        <div><i class="bi bi-box-seam"></i>Kubernetes</div>
+                        <div><i class="bi bi-diagram-3"></i>CI/CD</div>
+                        <div><i class="bi bi-gear"></i>Terraform</div>
                     </div>
-
                 </div>
-
+                <div class="col-lg-6">
+                    <div class="portrait-wrap">
+                        <div class="portrait-panel"></div>
+                        <div class="float-chip chip-one"><i class="bi bi-cloud"></i><span>Scalable<br>Cloud Solutions</span></div>
+                        <div class="float-chip chip-two"><i class="bi bi-gear"></i><span>Automate<br>Deploy · Scale</span></div>
+                        <img class="portrait-img" src="assets/profile.png" alt="Vamsi Krishna Konidala — DevOps Engineer" />
+                    </div>
+                </div>
             </div>
-
         </div>
-
     </header>
 
-
-    <!-- =====================================================
-         ABOUT SECTION
-         ===================================================== -->
-
-    <section class="bg-light py-5">
-
-        <div class="container px-5">
-
-            <div class="row gx-5 justify-content-center">
-
-                <div class="col-xxl-8">
-
-                    <div class="text-center my-5">
-
-
-                        <h2 class="display-5 fw-bolder">
-
-                            <span class="text-gradient d-inline">
-
-                                About Me
-
-                            </span>
-
-                        </h2>
-
-
-                        <p class="lead fw-light mb-4">
-
-                            I am Vamsi Krishna Konidala,
-                            a passionate DevOps Engineer with
-                            5+ years of experience in cloud
-                            infrastructure and automation.
-
-                        </p>
-
-
-                        <p class="text-muted">
-
-                            Specialized in AWS, Kubernetes (EKS),
-                            CI/CD pipelines, Docker and Terraform.
-
-                            Experienced in workload migration,
-                            secure cloud architecture implementation,
-                            and infrastructure cost optimization.
-
-                        </p>
-
-
-                        <!-- Social links -->
-
-                        <div class="d-flex justify-content-center fs-2 gap-4">
-
-
-                            <!-- LinkedIn -->
-
-                            <a
-                                class="text-gradient"
-                                href="https://www.linkedin.com/in/konidela/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="LinkedIn">
-
-                                <i class="bi bi-linkedin"></i>
-
-                            </a>
-
-
-                            <!-- GitHub -->
-
-                            <a
-                                class="text-gradient"
-                                href="https://github.com/vamsi-ec2"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="GitHub">
-
-                                <i class="bi bi-github"></i>
-
-                            </a>
-
-                        </div>
-
-                    </div>
-
+    <!-- Experience strip -->
+    <section class="stats-v2">
+        <div class="container px-4 px-lg-5">
+            <div class="stats-card">
+                <div class="row g-3 align-items-center">
+                    <div class="col-6 col-lg-3"><div class="stat-item"><div class="stat-icon"><i class="bi bi-briefcase"></i></div><div><div class="stat-number">5+</div><div class="stat-label">Years Experience</div></div></div></div>
+                    <div class="col-6 col-lg-3"><div class="stat-item"><div class="stat-icon"><i class="bi bi-cloud"></i></div><div><div class="stat-number">AWS</div><div class="stat-label">Cloud Platform</div></div></div></div>
+                    <div class="col-6 col-lg-3"><div class="stat-item"><div class="stat-icon"><i class="bi bi-boxes"></i></div><div><div class="stat-number">EKS</div><div class="stat-label">Kubernetes Platform</div></div></div></div>
+                    <div class="col-6 col-lg-3"><div class="stat-item"><div class="stat-icon"><i class="bi bi-arrow-repeat"></i></div><div><div class="stat-number">CI/CD</div><div class="stat-label">Automation</div></div></div></div>
                 </div>
-
             </div>
-
         </div>
-
     </section>
 
-
-    <!-- =====================================================
-         LIVE DEVOPS STATUS
-         ===================================================== -->
-
-    <section class="py-5 bg-light text-center">
-
-        <h2 class="fw-bold">
-            🚀 Live DevOps Status
-        </h2>
-
-        <p id="status">
-            Checking...
-        </p>
-
+    <!-- About -->
+    <section class="section-v2 section-soft">
+        <div class="container px-4 px-lg-5">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5">
+                    <div class="section-kicker">Get to know me</div>
+                    <h2 class="section-title mt-2"><span class="gradient-text">About Me</span></h2>
+                    <p class="about-copy mt-3">I am Vamsi Krishna Konidala, a passionate DevOps Engineer with 5+ years of experience in cloud infrastructure and automation.</p>
+                    <p class="about-copy">Specialized in AWS, Kubernetes (EKS), CI/CD pipelines, Docker and Terraform. Experienced in workload migration, secure cloud architecture implementation, and infrastructure cost optimization.</p>
+                    <div class="d-flex flex-wrap gap-3 mt-4"><a class="btn btn-v-primary" href="resume.html">View Resume <i class="bi bi-arrow-right ms-2"></i></a><a class="btn btn-v-outline" href="projects.html">View Projects</a></div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="row g-3">
+                        <div class="col-md-6"><div class="feature-card"><div class="feature-icon"><i class="bi bi-cloud"></i></div><h3>Cloud Infrastructure</h3><p>Designing and managing scalable, secure infrastructure on AWS.</p></div></div>
+                        <div class="col-md-6"><div class="feature-card"><div class="feature-icon"><i class="bi bi-boxes"></i></div><h3>Containers &amp; Orchestration</h3><p>Building and maintaining Docker and Kubernetes environments.</p></div></div>
+                        <div class="col-md-6"><div class="feature-card"><div class="feature-icon"><i class="bi bi-code-slash"></i></div><h3>CI/CD Automation</h3><p>Implementing automated deployment pipelines for faster delivery.</p></div></div>
+                        <div class="col-md-6"><div class="feature-card"><div class="feature-icon"><i class="bi bi-bar-chart-line"></i></div><h3>Optimization</h3><p>Focus on secure, reliable infrastructure and cost optimization.</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <!-- Tech stack -->
+    <section class="section-v2">
+        <div class="container px-4 px-lg-5">
+            <div class="row align-items-end">
+                <div class="col-lg-7"><div class="section-kicker">Technologies I work with</div><h2 class="section-title mt-2"><span class="gradient-text">My Tech Stack</span></h2></div>
+                <div class="col-lg-5 text-lg-end"><p class="text-secondary mb-0">Tools and technologies I use to build, deploy and manage modern cloud infrastructure.</p></div>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-item"><i class="bi bi-cloud"></i><span>AWS</span></div><div class="tech-item"><i class="bi bi-boxes"></i><span>Kubernetes</span></div><div class="tech-item"><i class="bi bi-box-seam"></i><span>Docker</span></div><div class="tech-item"><i class="bi bi-code-square"></i><span>Terraform</span></div><div class="tech-item"><i class="bi bi-github"></i><span>GitHub</span></div><div class="tech-item"><i class="bi bi-hammer"></i><span>Jenkins</span></div><div class="tech-item"><i class="bi bi-git"></i><span>GitLab</span></div><div class="tech-item"><i class="bi bi-terminal"></i><span>Linux</span></div><div class="tech-item"><i class="bi bi-diagram-3"></i><span>Nginx</span></div><div class="tech-item"><i class="bi bi-activity"></i><span>Prometheus</span></div><div class="tech-item"><i class="bi bi-speedometer2"></i><span>Grafana</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured projects -->
+    <section class="section-v2 section-soft">
+        <div class="container px-4 px-lg-5">
+            <div class="d-flex justify-content-between align-items-end gap-3 mb-4"><div><div class="section-kicker">Featured work</div><h2 class="section-title mt-2 mb-0"><span class="gradient-text">Featured Projects</span></h2></div><a class="btn btn-v-outline d-none d-md-inline-flex" href="projects.html">View All Projects <i class="bi bi-arrow-right ms-2"></i></a></div>
+            <div class="row g-4">
+                <div class="col-lg-6"><div class="project-card"><div class="project-icon"><i class="bi bi-boxes"></i></div><h3>AWS EKS Migration</h3><p>Migrated ECS to EKS across regions with CI/CD &amp; Terraform.</p><span class="tag">AWS</span><span class="tag">EKS</span><span class="tag">Terraform</span></div></div>
+                <div class="col-lg-6"><div class="project-card"><div class="project-icon"><i class="bi bi-cloud-gear"></i></div><h3>Banking Cloud Automation</h3><p>Terraform modules + Jenkins pipelines + Docker deployments.</p><span class="tag">Terraform</span><span class="tag">Jenkins</span><span class="tag">Docker</span></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live status -->
+    <section class="section-v2 pt-5">
+        <div class="container px-4 px-lg-5">
+            <div class="status-v2 text-center"><h2 class="fw-bold mb-3"><span class="gradient-text">🚀 Live DevOps Status</span></h2><div id="status" class="status-row"><span><span class="status-dot"></span>Checking AWS...</span><span>⏱ Deployment status loading...</span><span>🔁 CI/CD checking...</span></div></div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="pb-5">
+        <div class="container px-4 px-lg-5"><div class="cta-v2"><div class="row align-items-center position-relative" style="z-index:1"><div class="col-lg-8"><div class="small text-white-50 fw-bold text-uppercase mb-2">Let's connect</div><h2 class="fw-bolder mb-2">Let's Work Together</h2><p class="mb-0 text-white-50">Open to new opportunities, collaborations and challenging DevOps projects.</p></div><div class="col-lg-4 text-lg-end mt-4 mt-lg-0"><a href="contact.html" class="btn btn-light btn-lg fw-bold"><i class="bi bi-envelope me-2"></i>Get In Touch <i class="bi bi-arrow-right ms-2"></i></a></div></div></div></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-v2 bg-white py-4"><div class="container px-4 px-lg-5"><div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3"><div class="small text-secondary">© 2026 Vamsi Krishna Konidala. All rights reserved.</div><div class="d-flex gap-3"><a class="text-secondary" href="https://www.linkedin.com/in/konidela/" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a><a class="text-secondary" href="https://github.com/vamsi-ec2" target="_blank" rel="noopener"><i class="bi bi-github"></i></a><a class="text-secondary" href="contact.html"><i class="bi bi-envelope"></i></a></div></div></div></footer>
 
 </main>
 
-
-<!-- =====================================================
-     FOOTER
-     ===================================================== -->
-
-<footer class="bg-white py-4 mt-auto">
-
-    <div class="container px-5">
-
-        <div class="small m-0">
-
-            Copyright &copy; Vamsi Krishna Konidala 2026
-
-        </div>
-
-    </div>
-
-</footer>
-
-
-<!-- =====================================================
-     BOOTSTRAP JAVASCRIPT
-     ===================================================== -->
-
-<script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js">
-</script>
-
-
-<!-- Your existing JavaScript -->
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/scripts.js"></script>
-
-
-<!-- =====================================================
-     TYPING ANIMATION
-     ===================================================== -->
-
 <script>
-
-const roles = [
-
-    "DevOps Engineer",
-
-    "AWS Cloud Specialist",
-
-    "Kubernetes Administrator",
-
-    "CI/CD Automation Expert"
-
-];
-
-
-let index = 0;
-
-let charIndex = 0;
-
-let currentText = "";
-
-let isDeleting = false;
-
-
-const typingElement =
-    document.getElementById("typing-text");
-
-
-function typeEffect() {
-
-    const fullText = roles[index];
-
-
-    /* Typing */
-
-    if (!isDeleting) {
-
-        currentText =
-            fullText.substring(0, charIndex++);
-
-    }
-
-
-    /* Deleting */
-
-    else {
-
-        currentText =
-            fullText.substring(0, charIndex--);
-
-    }
-
-
-    /* Update screen */
-
-    typingElement.textContent =
-        currentText;
-
-
-    /* Finished typing */
-
-    if (
-        !isDeleting &&
-        charIndex === fullText.length
-    ) {
-
-        setTimeout(() => {
-
-            isDeleting = true;
-
-        }, 1200);
-
-    }
-
-
-    /* Finished deleting */
-
-    else if (
-        isDeleting &&
-        charIndex === 0
-    ) {
-
-        isDeleting = false;
-
-        index =
-            (index + 1) % roles.length;
-
-    }
-
-
-    /* Animation speed */
-
-    setTimeout(
-        typeEffect,
-        isDeleting ? 50 : 100
-    );
-
-}
-
-
+const roles = ["DevOps Engineer","AWS Cloud Specialist","Kubernetes Administrator","CI/CD Automation Expert"];
+let roleIndex=0,charIndex=0,deleting=false;
+const typingElement=document.getElementById("typing-text");
+function typeEffect(){if(!typingElement)return;const full=roles[roleIndex];charIndex=deleting?charIndex-1:charIndex+1;typingElement.textContent=full.substring(0,charIndex);if(!deleting&&charIndex===full.length){deleting=true;setTimeout(typeEffect,1200);return}if(deleting&&charIndex===0){deleting=false;roleIndex=(roleIndex+1)%roles.length}setTimeout(typeEffect,deleting?48:85)}
 typeEffect();
-
+setTimeout(()=>{
+  const s=document.getElementById("status");
+  if(s){s.innerHTML=`<span><span class="status-dot"></span>AWS: Running</span><span>⏱ Last Deployment: 2 hours ago</span><span>🔁 CI/CD: SUCCESS</span>`;}
+},1200);
 </script>
-
-
 </body>
 </html>
