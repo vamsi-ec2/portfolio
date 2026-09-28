@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <title>Resume | Vamsi Krishna Konidala</title>
 
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
 
     <!-- Google Font -->
@@ -15,369 +13,309 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- Bootstrap Icons -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
-        rel="stylesheet">
+        rel="stylesheet"
+    />
 
     <!-- Bootstrap -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-        rel="stylesheet">
+        rel="stylesheet"
+    />
 
-    <!-- Existing Styles -->
+    <!-- Bootstrap Icons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        rel="stylesheet"
+    />
+
     <link href="css/styles.css" rel="stylesheet" />
 
-    <!-- Resume Page Styles -->
     <style>
-        /* =========================================
-           RESUME PAGE
-        ========================================= */
 
-        :root {
-            --resume-primary: #155eef;
-            --resume-primary-dark: #123b9c;
-            --resume-text: #102a56;
-            --resume-muted: #5d6b82;
-            --resume-border: #e8edf5;
-            --resume-bg: #f8faff;
-            --resume-card: #ffffff;
-        }
+        /* =========================================================
+           RESUME PAGE
+        ========================================================= */
 
         body {
             font-family: "Plus Jakarta Sans", sans-serif;
-            color: var(--resume-text);
+            background: #ffffff;
+            color: #24324a;
+        }
+
+        /* Main wrapper */
+
+        .resume-page {
             background: #ffffff;
         }
 
-        /* =========================================
-           NAVBAR
-        ========================================= */
-
-        .resume-navbar {
-            background: rgba(255, 255, 255, 0.96);
-            border-bottom: 1px solid #eef2f8;
-            min-height: 72px;
-        }
-
-        .resume-navbar .navbar-brand {
-            color: var(--resume-primary);
-            font-size: 1rem;
-            font-weight: 800;
-            letter-spacing: -0.3px;
-        }
-
-        .resume-navbar .nav-link {
-            color: #50617b;
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin-left: 22px;
-            padding: 8px 0 !important;
-            position: relative;
-        }
-
-        .resume-navbar .nav-link:hover {
-            color: var(--resume-primary);
-        }
-
-        .resume-navbar .nav-link.active {
-            color: var(--resume-text);
-            font-weight: 700;
-        }
-
-        .resume-navbar .nav-link.active::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            height: 2px;
-            background: var(--resume-primary);
-            border-radius: 10px;
-        }
-
-        /* =========================================
+        /* =========================================================
            HERO
-        ========================================= */
+        ========================================================= */
 
         .resume-hero {
-            position: relative;
-            overflow: hidden;
             background:
-                radial-gradient(circle at 80% 20%, rgba(96, 129, 255, 0.12), transparent 35%),
-                linear-gradient(135deg, #f5f8ff 0%, #ffffff 60%, #f6f7ff 100%);
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(37, 99, 235, 0.07),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #ffffff 0%,
+                    #f8faff 55%,
+                    #f3f6ff 100%
+                );
+
+            border-top: 1px solid #edf1f7;
+            border-bottom: 1px solid #edf1f7;
             padding: 70px 0 65px;
         }
 
-        .resume-hero::after {
-            content: "";
-            position: absolute;
-            width: 650px;
-            height: 250px;
-            right: -120px;
-            bottom: -150px;
-            background: rgba(91, 80, 255, 0.05);
-            transform: rotate(28deg);
-            border-radius: 50%;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-eyebrow {
-            color: #536b96;
-            font-size: 0.82rem;
-            font-weight: 700;
-            letter-spacing: 0.4px;
+        .hero-label {
+            font-size: 13px;
+            font-weight: 800;
+            color: #55709c;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
             margin-bottom: 8px;
         }
 
         .hero-title {
-            font-size: 3rem;
-            line-height: 1.1;
+            font-size: 58px;
+            line-height: 1;
             font-weight: 800;
-            letter-spacing: -1.5px;
-            margin-bottom: 10px;
-            color: #102b5b;
+            color: #102a56;
+            margin-bottom: 12px;
         }
 
         .hero-title span {
-            color: var(--resume-primary);
+            color: #1769ff;
         }
 
-        .hero-role {
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: #425b84;
-            margin-bottom: 15px;
+        .hero-subtitle {
+            font-size: 16px;
+            font-weight: 700;
+            color: #29456f;
+            margin-bottom: 12px;
         }
 
         .hero-description {
             max-width: 650px;
-            color: #53698d;
-            line-height: 1.75;
-            font-size: 0.94rem;
-            margin-bottom: 25px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #607394;
+            margin-bottom: 22px;
         }
 
-        .hero-buttons {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
+        /* Hero buttons */
 
-        .btn-resume-primary {
-            background: var(--resume-primary);
-            border: 1px solid var(--resume-primary);
+        .resume-btn-primary {
+            background: #1769ff;
+            border: 1px solid #1769ff;
             color: #ffffff;
-            padding: 11px 22px;
-            border-radius: 8px;
-            font-size: 0.85rem;
             font-weight: 700;
-            text-decoration: none;
-            transition: 0.2s ease;
+            font-size: 13px;
+            padding: 12px 22px;
+            border-radius: 7px;
+            transition: all 0.2s ease;
         }
 
-        .btn-resume-primary:hover {
-            background: #0d4fd5;
-            border-color: #0d4fd5;
+        .resume-btn-primary:hover {
+            background: #0d58df;
+            border-color: #0d58df;
             color: #ffffff;
             transform: translateY(-1px);
         }
 
-        .btn-resume-outline {
+        .resume-btn-outline {
             background: #ffffff;
-            border: 1px solid var(--resume-primary);
-            color: var(--resume-primary-dark);
-            padding: 11px 22px;
-            border-radius: 8px;
-            font-size: 0.85rem;
+            border: 1px solid #1769ff;
+            color: #174ea6;
             font-weight: 700;
-            text-decoration: none;
-            transition: 0.2s ease;
+            font-size: 13px;
+            padding: 12px 22px;
+            border-radius: 7px;
+            transition: all 0.2s ease;
         }
 
-        .btn-resume-outline:hover {
-            background: #f2f6ff;
-            color: var(--resume-primary-dark);
+        .resume-btn-outline:hover {
+            background: #f1f6ff;
+            color: #1769ff;
         }
 
-        /* =========================================
+        /* =========================================================
            HERO STATS
-        ========================================= */
+        ========================================================= */
 
         .hero-stats {
-            background: rgba(255, 255, 255, 0.94);
-            border: 1px solid #edf1f8;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid #e7edf6;
             border-radius: 12px;
-            box-shadow: 0 12px 35px rgba(34, 67, 128, 0.08);
+            box-shadow: 0 10px 30px rgba(33, 60, 110, 0.08);
             overflow: hidden;
         }
 
-        .stat-item {
+        .hero-stat {
             min-height: 105px;
             display: flex;
             align-items: center;
-            gap: 13px;
-            padding: 20px;
+            gap: 14px;
+            padding: 22px;
+            border-bottom: 1px solid #edf1f7;
         }
 
-        .stat-item:nth-child(1),
-        .stat-item:nth-child(2) {
-            border-bottom: 1px solid #edf1f8;
+        .hero-stat:nth-child(odd) {
+            border-right: 1px solid #edf1f7;
         }
 
-        .stat-item:nth-child(1),
-        .stat-item:nth-child(3) {
-            border-right: 1px solid #edf1f8;
+        .hero-stat:nth-child(3),
+        .hero-stat:nth-child(4) {
+            border-bottom: none;
         }
 
-        .stat-icon {
-            width: 44px;
-            height: 44px;
-            min-width: 44px;
+        .hero-stat-icon {
+            width: 42px;
+            height: 42px;
+            min-width: 42px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #edf3ff;
-            color: var(--resume-primary);
             border-radius: 50%;
-            font-size: 1.15rem;
+            background: #edf4ff;
+            font-size: 20px;
         }
 
-        .stat-number {
-            font-size: 1.15rem;
+        .hero-stat-number {
+            font-size: 20px;
             font-weight: 800;
-            color: #092b70;
+            color: #102a56;
             line-height: 1.2;
         }
 
-        .stat-label {
-            color: #64738c;
-            font-size: 0.68rem;
+        .hero-stat-label {
+            font-size: 10px;
+            color: #6d7d98;
             margin-top: 3px;
         }
 
-        /* =========================================
-           MAIN CONTENT
-        ========================================= */
+        /* =========================================================
+           CONTENT
+        ========================================================= */
 
         .resume-content {
-            padding: 55px 0 70px;
-            background: #ffffff;
+            padding: 60px 0 70px;
         }
 
+        /* =========================================================
+           SECTION HEADER
+        ========================================================= */
+
         .resume-section {
-            margin-bottom: 45px;
+            margin-bottom: 48px;
         }
 
         .section-heading {
             display: flex;
             align-items: center;
             gap: 14px;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         .section-icon {
-            width: 44px;
-            height: 44px;
-            min-width: 44px;
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #edf3ff;
-            color: var(--resume-primary);
             border-radius: 50%;
-            font-size: 1.1rem;
+            background: #edf4ff;
+            font-size: 17px;
         }
 
-        .section-heading h2 {
+        .section-title {
             margin: 0;
-            font-size: 1.35rem;
+            font-size: 20px;
             font-weight: 800;
             color: #102a56;
         }
 
-        .section-heading p {
+        .section-subtitle {
             margin: 2px 0 0;
-            color: #70809a;
-            font-size: 0.76rem;
+            font-size: 11px;
+            color: #7a8aa3;
         }
 
-        /* =========================================
+        /* =========================================================
            EXPERIENCE TIMELINE
-        ========================================= */
+        ========================================================= */
 
         .experience-timeline {
             position: relative;
-            padding-left: 32px;
+            padding-left: 0;
         }
 
         .experience-timeline::before {
             content: "";
             position: absolute;
-            left: 8px;
-            top: 12px;
-            bottom: 20px;
+            left: 5px;
+            top: 10px;
+            bottom: 30px;
             width: 2px;
-            background: #dbe4f3;
+            background: #dce6f5;
         }
 
         .experience-item {
             position: relative;
             display: grid;
-            grid-template-columns: 180px 1fr;
-            gap: 18px;
-            margin-bottom: 16px;
+            grid-template-columns: 140px 1fr;
+            gap: 15px;
+            margin-bottom: 12px;
         }
 
         .experience-dot {
             position: absolute;
-            left: -30px;
-            top: 16px;
+            left: 0;
+            top: 10px;
             width: 12px;
             height: 12px;
-            background: var(--resume-primary);
+            background: #1769ff;
+            border: 3px solid #ffffff;
             border-radius: 50%;
-            border: 2px solid #ffffff;
-            box-shadow: 0 0 0 1px #d9e3f5;
+            box-shadow: 0 0 0 1px #b9d1ff;
             z-index: 2;
         }
 
-        .experience-meta {
-            background: #f8faff;
-            border-radius: 9px;
-            padding: 17px 16px;
-            min-height: 150px;
+        .experience-date {
+            margin-left: 20px;
+            background: #f5f8fe;
+            border-radius: 8px;
+            padding: 14px 12px;
+            min-height: 165px;
         }
 
-        .experience-date {
-            color: var(--resume-primary);
-            font-size: 0.78rem;
+        .experience-date-range {
+            color: #1769ff;
+            font-size: 11px;
             font-weight: 800;
-            line-height: 1.45;
+            line-height: 1.5;
             margin-bottom: 10px;
         }
 
         .experience-duration {
             display: inline-block;
-            background: #eaf1ff;
-            color: #2456aa;
+            background: #e8f0ff;
+            color: #1769ff;
             border-radius: 20px;
-            padding: 5px 10px;
-            font-size: 0.65rem;
+            padding: 4px 9px;
+            font-size: 9px;
             font-weight: 700;
             margin-bottom: 12px;
         }
 
         .experience-location {
-            color: #687993;
-            font-size: 0.7rem;
+            color: #71819a;
+            font-size: 9px;
         }
 
         .experience-location i {
@@ -385,30 +323,32 @@
         }
 
         .experience-card {
+            position: relative;
             background: #ffffff;
-            border: 1px solid var(--resume-border);
-            border-radius: 10px;
-            padding: 18px 22px;
-            box-shadow: 0 4px 15px rgba(25, 57, 110, 0.045);
-            transition: 0.2s ease;
+            border: 1px solid #e4ebf5;
+            border-radius: 9px;
+            padding: 18px 145px 18px 20px;
+            min-height: 165px;
+            box-shadow: 0 3px 12px rgba(26, 54, 93, 0.035);
+            transition: all 0.2s ease;
         }
 
         .experience-card:hover {
-            box-shadow: 0 8px 25px rgba(25, 57, 110, 0.08);
-            transform: translateY(-1px);
+            border-color: #c9dbfa;
+            box-shadow: 0 7px 22px rgba(26, 54, 93, 0.07);
         }
 
-        .experience-company {
-            font-size: 0.9rem;
+        .company-name {
+            color: #102a56;
+            font-size: 13px;
             font-weight: 800;
-            color: #122b57;
-            margin-bottom: 2px;
+            margin-bottom: 3px;
         }
 
-        .experience-role {
-            color: var(--resume-primary);
-            font-size: 0.78rem;
-            font-weight: 700;
+        .job-title {
+            color: #1769ff;
+            font-size: 11px;
+            font-weight: 800;
             margin-bottom: 10px;
         }
 
@@ -418,168 +358,316 @@
         }
 
         .experience-card li {
-            color: #53647d;
-            font-size: 0.76rem;
-            line-height: 1.6;
-            margin-bottom: 3px;
+            color: #566a88;
+            font-size: 10px;
+            line-height: 1.7;
+            margin-bottom: 1px;
         }
 
-        /* =========================================
+        /* Company Logo */
+
+        .company-logo {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+
+            width: 112px;
+            height: 52px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #ffffff;
+            border: 1px solid #dbe5f3;
+            border-radius: 7px;
+            padding: 8px;
+        }
+
+        .company-logo img {
+            max-width: 100%;
+            max-height: 35px;
+            object-fit: contain;
+        }
+
+        /* =========================================================
            EDUCATION
-        ========================================= */
+        ========================================================= */
 
         .education-card {
-            border: 1px solid var(--resume-border);
-            border-radius: 10px;
-            padding: 20px;
             display: grid;
-            grid-template-columns: 185px 1fr 80px;
+            grid-template-columns: 125px 1fr 65px;
             align-items: center;
-            gap: 20px;
-            box-shadow: 0 4px 15px rgba(25, 57, 110, 0.045);
-        }
+            gap: 18px;
 
-        .education-meta {
-            background: #f8faff;
+            background: #ffffff;
+            border: 1px solid #e4ebf5;
             border-radius: 9px;
             padding: 15px;
+            box-shadow: 0 3px 12px rgba(26, 54, 93, 0.035);
+        }
+
+        .education-period {
+            background: #f5f8fe;
+            border-radius: 7px;
+            padding: 14px 12px;
         }
 
         .education-year {
-            color: var(--resume-primary);
-            font-size: 0.8rem;
+            color: #1769ff;
+            font-size: 11px;
             font-weight: 800;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
         .education-degree {
-            color: #53647d;
-            font-size: 0.7rem;
+            color: #566a88;
+            font-size: 9px;
+            line-height: 1.5;
         }
 
-        .education-title {
-            color: #122b57;
-            font-size: 0.9rem;
+        .education-name {
+            color: #102a56;
+            font-size: 12px;
             font-weight: 800;
             margin-bottom: 3px;
         }
 
-        .education-subtitle {
-            color: #61718a;
-            font-size: 0.72rem;
-            margin-bottom: 12px;
+        .education-location {
+            color: #71819a;
+            font-size: 9px;
+            margin-bottom: 8px;
         }
 
         .education-description {
-            color: #687993;
-            font-size: 0.72rem;
+            color: #647691;
+            font-size: 9px;
             line-height: 1.6;
             margin: 0;
         }
 
         .education-icon {
-            width: 58px;
-            height: 58px;
+            width: 48px;
+            height: 48px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #f5f8ff;
-            color: var(--resume-primary);
-            border-radius: 10px;
-            font-size: 1.45rem;
+            border-radius: 8px;
+            background: #f5f8fe;
+            font-size: 20px;
         }
 
-        /* =========================================
+        /* =========================================================
            SKILLS
-        ========================================= */
-
-        .skills-filter {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 9px;
-            margin-bottom: 15px;
-        }
+        ========================================================= */
 
         .skill-filter {
-            border: 0;
-            background: #f4f7fc;
-            color: #53647d;
-            border-radius: 20px;
-            padding: 8px 17px;
-            font-size: 0.7rem;
-            font-weight: 600;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px;
         }
 
-        .skill-filter.active {
-            background: var(--resume-primary);
+        .skill-filter span {
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: #f4f7fb;
+            color: #526887;
+            font-size: 9px;
+            font-weight: 700;
+        }
+
+        .skill-filter span.active {
+            background: #1769ff;
             color: #ffffff;
         }
 
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(9, 1fr);
-            gap: 10px;
+            gap: 7px;
         }
 
-        .skill-item {
-            min-height: 82px;
-            border: 1px solid var(--resume-border);
-            background: #ffffff;
-            border-radius: 9px;
+        .skill-card {
+            min-height: 75px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            gap: 7px;
+
+            background: #ffffff;
+            border: 1px solid #e4ebf5;
+            border-radius: 8px;
+
+            box-shadow: 0 3px 10px rgba(26, 54, 93, 0.035);
+
+            transition: all 0.2s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(26, 54, 93, 0.08);
+        }
+
+        .skill-icon {
+            font-size: 21px;
+            line-height: 1;
+        }
+
+        .skill-name {
+            color: #536783;
+            font-size: 8px;
+            font-weight: 700;
             text-align: center;
-            padding: 10px 6px;
-            box-shadow: 0 3px 12px rgba(25, 57, 110, 0.035);
         }
 
-        .skill-item i {
-            color: var(--resume-primary);
-            font-size: 1.25rem;
-            margin-bottom: 7px;
+        /* =========================================================
+           ICON COLORS
+        ========================================================= */
+
+        .icon-aws {
+            color: #ff9900;
         }
 
-        .skill-item span {
-            color: #435a7f;
-            font-size: 0.65rem;
-            font-weight: 600;
+        .icon-kubernetes {
+            color: #326ce5;
         }
 
-        /* =========================================
+        .icon-docker {
+            color: #2496ed;
+        }
+
+        .icon-terraform {
+            color: #7b42bc;
+        }
+
+        .icon-jenkins {
+            color: #d24939;
+        }
+
+        .icon-ansible {
+            color: #ee0000;
+        }
+
+        .icon-git {
+            color: #f05032;
+        }
+
+        .icon-github {
+            color: #24292f;
+        }
+
+        .icon-linux {
+            color: #111111;
+        }
+
+        .icon-ecs {
+            color: #ff9900;
+        }
+
+        .icon-ec2 {
+            color: #f7941d;
+        }
+
+        .icon-s3 {
+            color: #569a31;
+        }
+
+        .icon-rds {
+            color: #527fff;
+        }
+
+        .icon-vpc {
+            color: #8b5cf6;
+        }
+
+        .icon-alb {
+            color: #1769ff;
+        }
+
+        .icon-cloudfront {
+            color: #f59e0b;
+        }
+
+        .icon-nagios {
+            color: #ef4444;
+        }
+
+        .icon-grafana {
+            color: #f97316;
+        }
+
+        .icon-powershell {
+            color: #2671be;
+        }
+
+        .icon-yaml {
+            color: #e44d26;
+        }
+
+        .icon-json {
+            color: #f0b429;
+        }
+
+        .icon-shell {
+            color: #16a34a;
+        }
+
+        .icon-groovy {
+            color: #4298b4;
+        }
+
+        .icon-bash {
+            color: #111827;
+        }
+
+        /* Section icon colors */
+
+        .section-icon-experience {
+            color: #1769ff;
+        }
+
+        .section-icon-education {
+            color: #7c3aed;
+        }
+
+        .section-icon-skills {
+            color: #f97316;
+        }
+
+        .section-icon-script {
+            color: #059669;
+        }
+
+        /* =========================================================
            FOOTER
-        ========================================= */
+        ========================================================= */
 
         .resume-footer {
-            border-top: 1px solid #edf1f7;
+            border-top: 1px solid #e7edf6;
             background: #ffffff;
-            color: #718097;
-            font-size: 0.72rem;
-            padding: 20px 0;
+            padding: 18px 0;
         }
 
-        /* =========================================
+        .resume-footer-text {
+            font-size: 9px;
+            color: #7b8aa2;
+            margin: 0;
+        }
+
+        /* =========================================================
            RESPONSIVE
-        ========================================= */
+        ========================================================= */
 
         @media (max-width: 991px) {
 
-            .resume-navbar .nav-link {
-                margin-left: 0;
-                padding: 10px 0 !important;
-            }
-
-            .resume-hero {
-                padding: 55px 0;
-            }
-
             .hero-title {
-                font-size: 2.5rem;
+                font-size: 48px;
             }
 
             .hero-stats {
-                margin-top: 35px;
+                margin-top: 30px;
             }
 
             .skills-grid {
@@ -589,73 +677,51 @@
 
         @media (max-width: 767px) {
 
-            .resume-navbar {
-                min-height: 65px;
-            }
-
             .resume-hero {
                 padding: 45px 0;
             }
 
             .hero-title {
-                font-size: 2.25rem;
+                font-size: 40px;
             }
 
-            .hero-role {
-                font-size: 0.92rem;
-                line-height: 1.6;
-            }
-
-            .hero-description {
-                font-size: 0.82rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .btn-resume-primary,
-            .btn-resume-outline {
-                text-align: center;
-                width: 100%;
-            }
-
-            .stat-item {
-                min-height: 90px;
-                padding: 15px;
-            }
-
-            .experience-timeline {
-                padding-left: 22px;
+            .hero-subtitle {
+                font-size: 14px;
             }
 
             .experience-item {
                 grid-template-columns: 1fr;
                 gap: 8px;
-                margin-bottom: 20px;
+                padding-left: 20px;
             }
 
             .experience-timeline::before {
-                left: 6px;
+                left: 4px;
             }
 
             .experience-dot {
-                left: -21px;
-                top: 13px;
+                left: -1px;
             }
 
-            .experience-meta {
+            .experience-date {
+                margin-left: 0;
                 min-height: auto;
-                padding: 13px 15px;
+                padding: 12px;
             }
 
             .experience-card {
-                padding: 17px;
+                padding: 18px;
+                padding-top: 85px;
+            }
+
+            .company-logo {
+                top: 18px;
+                left: 18px;
+                right: auto;
             }
 
             .education-card {
                 grid-template-columns: 1fr;
-                gap: 12px;
             }
 
             .education-icon {
@@ -665,863 +731,966 @@
             .skills-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
-
-            .section-heading h2 {
-                font-size: 1.15rem;
-            }
         }
 
-        @media (max-width: 480px) {
-
-            .container {
-                padding-left: 18px !important;
-                padding-right: 18px !important;
-            }
-
-            .hero-title {
-                font-size: 2rem;
-            }
-
-            .hero-stats .row {
-                margin: 0;
-            }
-
-            .stat-item {
-                padding: 12px;
-            }
-
-            .stat-icon {
-                width: 38px;
-                height: 38px;
-                min-width: 38px;
-                font-size: 0.95rem;
-            }
-
-            .stat-number {
-                font-size: 1rem;
-            }
-
-            .stat-label {
-                font-size: 0.6rem;
-            }
+        @media (max-width: 450px) {
 
             .skills-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .hero-stat {
+                min-height: 90px;
+                padding: 15px;
+            }
+
+            .hero-stat-number {
+                font-size: 17px;
+            }
         }
+
     </style>
 </head>
 
+<body class="d-flex flex-column min-vh-100">
 
-<body>
+<main class="flex-shrink-0 resume-page">
 
-    <main>
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================= -->
 
-        <!-- =========================================
-             NAVIGATION
-        ========================================== -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+        <div class="container px-5">
 
-        <nav class="navbar navbar-expand-lg resume-navbar">
-            <div class="container px-4 px-lg-5">
-
-                <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.html">
+                <span class="fw-bolder text-primary">
                     VAMSI KRISHNA KONIDALA
-                </a>
+                </span>
+            </a>
 
-                <button class="navbar-toggler border-0 shadow-none"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#resumeNavbar"
-                    aria-controls="resumeNavbar"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                    <i class="bi bi-list fs-3"></i>
+            <div
+                class="collapse navbar-collapse"
+                id="navbarSupportedContent"
+            >
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
 
-                </button>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            Home
+                        </a>
+                    </li>
 
-                <div class="collapse navbar-collapse" id="resumeNavbar">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="resume.html">
+                            Resume
+                        </a>
+                    </li>
 
-                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">
+                            Projects
+                        </a>
+                    </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">
-                                Home
-                            </a>
-                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            Contact
+                        </a>
+                    </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link active" href="resume.html">
-                                Resume
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="projects.html">
-                                Projects
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">
-                                Contact
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </div>
+                </ul>
             </div>
-        </nav>
+
+        </div>
+    </nav>
 
 
-        <!-- =========================================
-             RESUME HERO
-        ========================================== -->
+    <!-- =========================================================
+         HERO
+    ========================================================= -->
 
-        <section class="resume-hero">
+    <section class="resume-hero">
 
-            <div class="container px-4 px-lg-5">
+        <div class="container px-5">
 
-                <div class="row align-items-center">
+            <div class="row align-items-center">
 
-                    <!-- Hero Text -->
-                    <div class="col-lg-7 hero-content">
+                <!-- Left -->
 
-                        <div class="hero-eyebrow">
-                            My Career Journey
-                        </div>
+                <div class="col-lg-7">
 
-                        <h1 class="hero-title">
-                            <span>Resume</span>
-                        </h1>
-
-                        <div class="hero-role">
-                            DevOps Engineer | AWS | Kubernetes | CI/CD | Terraform
-                        </div>
-
-                        <p class="hero-description">
-                            5+ years of experience in DevOps, Cloud and Infrastructure Automation.
-                            Passionate about building scalable, secure and efficient cloud solutions.
-                        </p>
-
-                        <div class="hero-buttons">
-
-                            <a class="btn-resume-primary"
-                               href="assets/resume/Vamsi_Krishna_Konidala_Resume.pdf"
-                               download>
-
-                                <i class="bi bi-download me-2"></i>
-                                Download Resume
-
-                            </a>
-
-                            <a class="btn-resume-outline"
-                               href="assets/resume/Vamsi_Krishna_Konidala_Resume.pdf"
-                               target="_blank">
-
-                                <i class="bi bi-eye me-2"></i>
-                                View Resume
-
-                            </a>
-
-                        </div>
-
+                    <div class="hero-label">
+                        My Career Journey
                     </div>
 
+                    <h1 class="hero-title">
+                        <span>Resume</span>
+                    </h1>
 
-                    <!-- Hero Stats -->
-                    <div class="col-lg-5 hero-content">
+                    <div class="hero-subtitle">
+                        DevOps Engineer | AWS | Kubernetes | CI/CD | Terraform
+                    </div>
 
-                        <div class="hero-stats">
+                    <p class="hero-description">
+                        5+ years of experience in DevOps, Cloud and Infrastructure
+                        Automation. Passionate about building scalable, secure and
+                        efficient cloud solutions.
+                    </p>
 
-                            <div class="row g-0">
+                    <div class="d-flex flex-wrap gap-2">
 
-                                <!-- Stat 1 -->
-                                <div class="col-6 stat-item">
+                        <a
+                            href="assets/resume/Vamsi_Krishna_Konidala_Resume.pdf"
+                            download
+                            class="btn resume-btn-primary"
+                        >
+                            <i class="bi bi-download me-2"></i>
+                            Download Resume
+                        </a>
 
-                                    <div class="stat-icon">
-                                        <i class="bi bi-briefcase"></i>
-                                    </div>
-
-                                    <div>
-                                        <div class="stat-number">
-                                            5+
-                                        </div>
-
-                                        <div class="stat-label">
-                                            Years Experience
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                                <!-- Stat 2 -->
-                                <div class="col-6 stat-item">
-
-                                    <div class="stat-icon">
-                                        <i class="bi bi-cloud-fill"></i>
-                                    </div>
-
-                                    <div>
-                                        <div class="stat-number">
-                                            AWS
-                                        </div>
-
-                                        <div class="stat-label">
-                                            Cloud Platform
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                                <!-- Stat 3 -->
-                                <div class="col-6 stat-item">
-
-                                    <div class="stat-icon">
-                                        <i class="bi bi-gear-fill"></i>
-                                    </div>
-
-                                    <div>
-                                        <div class="stat-number">
-                                            10+
-                                        </div>
-
-                                        <div class="stat-label">
-                                            Technologies
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                                <!-- Stat 4 -->
-                                <div class="col-6 stat-item">
-
-                                    <div class="stat-icon">
-                                        <i class="bi bi-geo-alt-fill"></i>
-                                    </div>
-
-                                    <div>
-                                        <div class="stat-number">
-                                            India
-                                        </div>
-
-                                        <div class="stat-label">
-                                            Based In
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
+                        <a
+                            href="assets/resume/Vamsi_Krishna_Konidala_Resume.pdf"
+                            target="_blank"
+                            class="btn resume-btn-outline"
+                        >
+                            <i class="bi bi-eye me-2"></i>
+                            View Resume
+                        </a>
 
                     </div>
 
                 </div>
 
-            </div>
 
-        </section>
+                <!-- Right -->
+
+                <div class="col-lg-5">
+
+                    <div class="hero-stats">
+
+                        <div class="row g-0">
+
+                            <!-- Experience -->
+
+                            <div class="col-6 hero-stat">
+
+                                <div class="hero-stat-icon icon-aws">
+                                    <i class="bi bi-briefcase"></i>
+                                </div>
+
+                                <div>
+                                    <div class="hero-stat-number">
+                                        5+
+                                    </div>
+
+                                    <div class="hero-stat-label">
+                                        Years Experience
+                                    </div>
+                                </div>
+
+                            </div>
 
 
-        <!-- =========================================
-             MAIN RESUME CONTENT
-        ========================================== -->
+                            <!-- AWS -->
 
-        <section class="resume-content">
+                            <div class="col-6 hero-stat">
 
-            <div class="container px-4 px-lg-5">
+                                <div class="hero-stat-icon icon-aws">
+                                    <i class="bi bi-cloud-fill"></i>
+                                </div>
+
+                                <div>
+                                    <div class="hero-stat-number">
+                                        AWS
+                                    </div>
+
+                                    <div class="hero-stat-label">
+                                        Cloud Platform
+                                    </div>
+                                </div>
+
+                            </div>
 
 
-                <!-- =====================================
-                     EXPERIENCE
-                ====================================== -->
+                            <!-- Technologies -->
 
-                <section class="resume-section">
+                            <div class="col-6 hero-stat">
 
-                    <div class="section-heading">
+                                <div class="hero-stat-icon icon-terraform">
+                                    <i class="bi bi-gear-fill"></i>
+                                </div>
 
-                        <div class="section-icon">
-                            <i class="bi bi-briefcase"></i>
-                        </div>
+                                <div>
+                                    <div class="hero-stat-number">
+                                        10+
+                                    </div>
 
-                        <div>
-                            <h2>Professional Experience</h2>
-                            <p>My work journey and key responsibilities</p>
+                                    <div class="hero-stat-label">
+                                        Technologies
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <!-- Location -->
+
+                            <div class="col-6 hero-stat">
+
+                                <div class="hero-stat-icon icon-kubernetes">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                </div>
+
+                                <div>
+                                    <div class="hero-stat-number">
+                                        India
+                                    </div>
+
+                                    <div class="hero-stat-label">
+                                        Based In
+                                    </div>
+                                </div>
+
+                            </div>
+
                         </div>
 
                     </div>
 
-
-                    <div class="experience-timeline">
-
-
-                        <!-- EXPERIENCE 1 -->
-
-                        <div class="experience-item">
-
-                            <div class="experience-dot"></div>
-
-                            <div class="experience-meta">
-
-                                <div class="experience-date">
-                                    May 2023 - Present
-                                </div>
-
-                                <div class="experience-duration">
-                                    2+ years
-                                </div>
-
-                                <div class="experience-location">
-                                    <i class="bi bi-geo-alt"></i>
-                                    Mumbai, India
-                                </div>
-
-                            </div>
-
-
-                            <div class="experience-card">
-
-                                <div class="experience-company">
-                                    Adm-Indicia
-                                </div>
-
-                                <div class="experience-role">
-                                    DevOps Engineer
-                                </div>
-
-                                <ul>
-
-                                    <li>
-                                        Managing AWS infrastructure
-                                        (EC2, EKS, ECS, S3, RDS, IAM, Route53, CloudFront)
-                                    </li>
-
-                                    <li>
-                                        Migrated ECS to EKS clusters across multiple regions
-                                    </li>
-
-                                    <li>
-                                        Developed CI/CD pipelines using Jenkins
-                                    </li>
-
-                                    <li>
-                                        Created Docker images and pushed to ECR
-                                    </li>
-
-                                    <li>
-                                        Implemented Infrastructure as Code using Terraform
-                                    </li>
-
-                                    <li>
-                                        Configured RBAC and IAM for secure Kubernetes access
-                                    </li>
-
-                                    <li>
-                                        Implemented cost optimization strategies
-                                    </li>
-
-                                </ul>
-
-                            </div>
-
-                        </div>
-
-
-                        <!-- EXPERIENCE 2 -->
-
-                        <div class="experience-item">
-
-                            <div class="experience-dot"></div>
-
-                            <div class="experience-meta">
-
-                                <div class="experience-date">
-                                    July 2022 - March 2023
-                                </div>
-
-                                <div class="experience-duration">
-                                    9 months
-                                </div>
-
-                                <div class="experience-location">
-                                    <i class="bi bi-geo-alt"></i>
-                                    Mumbai, India
-                                </div>
-
-                            </div>
-
-
-                            <div class="experience-card">
-
-                                <div class="experience-company">
-                                    Inspira Enterprise India Pvt Ltd
-                                </div>
-
-                                <div class="experience-role">
-                                    AWS Cloud Engineer
-                                </div>
-
-                                <ul>
-
-                                    <li>
-                                        Designed AWS cloud solutions for banking applications
-                                    </li>
-
-                                    <li>
-                                        Automated infrastructure using Terraform
-                                    </li>
-
-                                    <li>
-                                        CI/CD implementation using Jenkins
-                                    </li>
-
-                                    <li>
-                                        Configured Ansible playbooks for automation
-                                    </li>
-
-                                    <li>
-                                        Docker containerization and Docker Compose
-                                    </li>
-
-                                    <li>
-                                        Monitoring with Datadog and Nagios
-                                    </li>
-
-                                </ul>
-
-                            </div>
-
-                        </div>
-
-
-                        <!-- EXPERIENCE 3 -->
-
-                        <div class="experience-item">
-
-                            <div class="experience-dot"></div>
-
-                            <div class="experience-meta">
-
-                                <div class="experience-date">
-                                    March 2021 - June 2022
-                                </div>
-
-                                <div class="experience-duration">
-                                    1+ year
-                                </div>
-
-                                <div class="experience-location">
-                                    <i class="bi bi-geo-alt"></i>
-                                    Bengaluru, India
-                                </div>
-
-                            </div>
-
-
-                            <div class="experience-card">
-
-                                <div class="experience-company">
-                                    Bluefield Technologies Pvt Ltd
-                                </div>
-
-                                <div class="experience-role">
-                                    DevOps Engineer
-                                </div>
-
-                                <ul>
-
-                                    <li>
-                                        Built CI/CD pipelines using Jenkins and Maven
-                                    </li>
-
-                                    <li>
-                                        Implemented Git branching and merging strategies
-                                    </li>
-
-                                    <li>
-                                        Provisioned infrastructure using Terraform
-                                    </li>
-
-                                    <li>
-                                        Automated deployments to QA, UAT & Production
-                                    </li>
-
-                                    <li>
-                                        Managed IAM users and roles
-                                    </li>
-
-                                    <li>
-                                        Deployed applications on Apache & Tomcat
-                                    </li>
-
-                                    <li>
-                                        Handled AWS support cases & cost optimization
-                                    </li>
-
-                                </ul>
-
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-                </section>
-
-
-                <!-- =====================================
-                     EDUCATION
-                ====================================== -->
-
-                <section class="resume-section">
-
-                    <div class="section-heading">
-
-                        <div class="section-icon">
-                            <i class="bi bi-mortarboard-fill"></i>
-                        </div>
-
-                        <div>
-                            <h2>Education</h2>
-                            <p>Academic background</p>
-                        </div>
-
-                    </div>
-
-
-                    <div class="education-card">
-
-                        <div class="education-meta">
-
-                            <div class="education-year">
-                                2014 - 2018
-                            </div>
-
-                            <div class="education-degree">
-                                B.Tech
-                            </div>
-
-                            <div class="education-degree">
-                                Mechanical Engineering
-                            </div>
-
-                        </div>
-
-
-                        <div>
-
-                            <div class="education-title">
-                                PBR VITS
-                            </div>
-
-                            <div class="education-subtitle">
-                                Kavali, AP
-                            </div>
-
-                            <p class="education-description">
-                                Mechanical Engineering is the branch of engineering that
-                                designs, analyzes, and maintains mechanical systems to
-                                develop innovative and efficient solutions for real-world
-                                industrial and technological challenges.
-                            </p>
-
-                        </div>
-
-
-                        <div class="education-icon">
-                            <i class="bi bi-mortarboard-fill"></i>
-                        </div>
-
-                    </div>
-
-                </section>
-
-
-                <!-- =====================================
-                     TECHNICAL SKILLS
-                ====================================== -->
-
-                <section class="resume-section">
-
-                    <div class="section-heading">
-
-                        <div class="section-icon">
-                            <i class="bi bi-gear-fill"></i>
-                        </div>
-
-                        <div>
-                            <h2>Technical Skills</h2>
-                            <p>Tools and technologies I work with</p>
-                        </div>
-
-                    </div>
-
-
-                    <!-- Skill Categories -->
-
-                    <div class="skills-filter">
-
-                        <button class="skill-filter active">
-                            All
-                        </button>
-
-                        <button class="skill-filter">
-                            Cloud
-                        </button>
-
-                        <button class="skill-filter">
-                            DevOps
-                        </button>
-
-                        <button class="skill-filter">
-                            Containers
-                        </button>
-
-                        <button class="skill-filter">
-                            Infrastructure
-                        </button>
-
-                        <button class="skill-filter">
-                            Monitoring
-                        </button>
-
-                        <button class="skill-filter">
-                            Scripting
-                        </button>
-
-                        <button class="skill-filter">
-                            Others
-                        </button>
-
-                    </div>
-
-
-                    <!-- Skills Grid -->
-
-                    <div class="skills-grid">
-
-                        <div class="skill-item">
-                            <i class="bi bi-cloud-fill"></i>
-                            <span>AWS</span>
-                        </div>
-
-                        <div class="skill-item">
-                            <i class="bi bi-box"></i>
-                            <span>Kubernetes</span>
-                        </div>
-
-                        <div class="skill-item">
-                            <i class="bi bi-box-seam"></i>
-                            <span>Docker</span>
-                        </div>
-
-                        <div class="skill-item">
-                            <i class="bi bi-diagram-3"></i>
-                            <span>Terraform</span>
-                        </div>
-
-                        <div class="skill-item">
-                            <i class="bi bi-gear"></i>
-                            <span>Jenkins</span>
-                        </div>
-
-                        <div class="skill-item">
-                            <i class="bi bi-terminal"></i>
-                            <span>Ansible</span>
-                        </div>
-
-                        <div class="skill-item">
-                            <i class="bi bi-git"></i>
-                            <span>Git</span>
-                        </div>
-
-                        <div class="skill-item">
-                            <i class="bi bi-github"></i>
-                            <span>GitHub</span>
-                        </div>
-
-                        <div class="skill-item">
-                            <i class="bi bi-server"></i>
-                            <span>Linux</span>
-                        </div>
-
-                        <div class="skill-item">
-                            <i class="bi bi-cloud-arrow-up"></i>
-                            <span>ECS / EKS</span>
-                        </div>
-
-                        <div class="skill-item">
-                            <i class="bi bi-hdd"></i>
-                            <span>EC2</span>
-                        </div>
-
-                        <div class="skill-item">
-                            <i class="bi bi-database"></i>
-                            <span>S3</span>
-                        </div>
-
-                        <div class="skill-item">
-                            <i class="bi bi-database-fill"></i>
-                            <span>RDS</span>
-                        </div>
-
-                        <div class="skill-item">
-                            <i class="bi bi-diagram-2"></i>
-                            <span>VPC</span>
-                        </div>
-
-                        <div class="skill-item">
-                            <i class="bi bi-router"></i>
-                            <span>ALB</span>
-                        </div>
-
-                        <div class="skill-item">
-                            <i class="bi bi-globe"></i>
-                            <span>CloudFront</span>
-                        </div>
-
-                        <div class="skill-item">
-                            <i class="bi bi-activity"></i>
-                            <span>Nagios</span>
-                        </div>
-
-                        <div class="skill-item">
-                            <i class="bi bi-bar-chart"></i>
-                            <span>Grafana</span>
-                        </div>
-
-                    </div>
-
-                </section>
-
-
-                <!-- =====================================
-                     LANGUAGES / SCRIPTING
-                ====================================== -->
-
-                <section class="resume-section">
-
-                    <div class="section-heading">
-
-                        <div class="section-icon">
-                            <i class="bi bi-code-slash"></i>
-                        </div>
-
-                        <div>
-                            <h2>Scripting & Configuration</h2>
-                            <p>Languages and configuration formats</p>
-                        </div>
-
-                    </div>
-
-
-                    <div class="skills-grid">
-
-                        <div class="skill-item">
-                            <i class="bi bi-terminal"></i>
-                            <span>PowerShell</span>
-                        </div>
-
-                        <div class="skill-item">
-                            <i class="bi bi-filetype-yml"></i>
-                            <span>YAML</span>
-                        </div>
-
-                        <div class="skill-item">
-                            <i class="bi bi-filetype-json"></i>
-                            <span>JSON</span>
-                        </div>
-
-                        <div class="skill-item">
-                            <i class="bi bi-terminal-fill"></i>
-                            <span>ShellScript</span>
-                        </div>
-
-                        <div class="skill-item">
-                            <i class="bi bi-code-square"></i>
-                            <span>Groovy</span>
-                        </div>
-
-                        <div class="skill-item">
-                            <i class="bi bi-terminal"></i>
-                            <span>Bash</span>
-                        </div>
-
-                    </div>
-
-                </section>
-
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- =========================================
-         FOOTER
-    ========================================== -->
-
-    <footer class="resume-footer">
-
-        <div class="container px-4 px-lg-5">
-
-            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
-
-                <div>
-                    Copyright © Vamsi Krishna Konidala 2026
-                </div>
-
-                <div>
-                    DevOps Engineer | AWS | Kubernetes
                 </div>
 
             </div>
 
         </div>
 
-    </footer>
+    </section>
 
 
-    <!-- Bootstrap JS -->
+    <!-- =========================================================
+         MAIN CONTENT
+    ========================================================= -->
 
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js">
-    </script>
+    <div class="resume-content">
 
-    <!-- Existing JS -->
-
-    <script src="js/scripts.js"></script>
+        <div class="container px-5">
 
 
-    <!-- Simple Skill Filter Visual -->
+            <!-- =====================================================
+                 EXPERIENCE
+            ===================================================== -->
 
-    <script>
+            <section class="resume-section">
 
-        document.querySelectorAll(".skill-filter").forEach(button => {
+                <div class="section-heading">
 
-            button.addEventListener("click", function () {
+                    <div class="section-icon section-icon-experience">
+                        <i class="bi bi-briefcase"></i>
+                    </div>
 
-                document.querySelectorAll(".skill-filter").forEach(btn => {
-                    btn.classList.remove("active");
-                });
+                    <div>
+                        <h2 class="section-title">
+                            Professional Experience
+                        </h2>
 
-                this.classList.add("active");
+                        <p class="section-subtitle">
+                            My work journey and key responsibilities
+                        </p>
+                    </div>
 
-            });
+                </div>
 
-        });
 
-    </script>
+                <div class="experience-timeline">
+
+
+                    <!-- EXPERIENCE 1 -->
+
+                    <div class="experience-item">
+
+                        <div class="experience-dot"></div>
+
+                        <div class="experience-date">
+
+                            <div class="experience-date-range">
+                                May 2023 - Present
+                            </div>
+
+                            <div class="experience-duration">
+                                2+ years
+                            </div>
+
+                            <div class="experience-location">
+                                <i class="bi bi-geo-alt"></i>
+                                Mumbai, India
+                            </div>
+
+                        </div>
+
+
+                        <div class="experience-card">
+
+                            <div class="company-logo">
+                                <img
+                                    src="assets/indicia.png"
+                                    alt="Indicia"
+                                />
+                            </div>
+
+                            <div class="company-name">
+                                Adm-Indicia
+                            </div>
+
+                            <div class="job-title">
+                                DevOps Engineer
+                            </div>
+
+                            <ul>
+
+                                <li>
+                                    Managing AWS infrastructure
+                                    (EC2, EKS, ECS, S3, RDS, IAM,
+                                    Route53, CloudFront)
+                                </li>
+
+                                <li>
+                                    Migrated ECS to EKS clusters across
+                                    multiple regions
+                                </li>
+
+                                <li>
+                                    Developed CI/CD pipelines using Jenkins
+                                </li>
+
+                                <li>
+                                    Created Docker images and pushed to ECR
+                                </li>
+
+                                <li>
+                                    Implemented Infrastructure as Code
+                                    using Terraform
+                                </li>
+
+                                <li>
+                                    Configured RBAC and IAM for secure
+                                    Kubernetes access
+                                </li>
+
+                                <li>
+                                    Implemented cost optimization strategies
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- EXPERIENCE 2 -->
+
+                    <div class="experience-item">
+
+                        <div class="experience-dot"></div>
+
+                        <div class="experience-date">
+
+                            <div class="experience-date-range">
+                                July 2022 - March 2023
+                            </div>
+
+                            <div class="experience-duration">
+                                9 months
+                            </div>
+
+                            <div class="experience-location">
+                                <i class="bi bi-geo-alt"></i>
+                                Mumbai, India
+                            </div>
+
+                        </div>
+
+
+                        <div class="experience-card">
+
+                            <div class="company-logo">
+                                <img
+                                    src="assets/inspira.png"
+                                    alt="Inspira"
+                                />
+                            </div>
+
+                            <div class="company-name">
+                                Inspira Enterprise India Pvt Ltd
+                            </div>
+
+                            <div class="job-title">
+                                AWS Cloud Engineer
+                            </div>
+
+                            <ul>
+
+                                <li>
+                                    Designed AWS cloud solutions for
+                                    banking applications
+                                </li>
+
+                                <li>
+                                    Automated infrastructure using Terraform
+                                </li>
+
+                                <li>
+                                    CI/CD implementation using Jenkins
+                                </li>
+
+                                <li>
+                                    Configured Ansible playbooks
+                                    for automation
+                                </li>
+
+                                <li>
+                                    Docker containerization and
+                                    Docker Compose
+                                </li>
+
+                                <li>
+                                    Monitoring with Datadog and Nagios
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- EXPERIENCE 3 -->
+
+                    <div class="experience-item">
+
+                        <div class="experience-dot"></div>
+
+                        <div class="experience-date">
+
+                            <div class="experience-date-range">
+                                March 2021 - June 2022
+                            </div>
+
+                            <div class="experience-duration">
+                                1+ year
+                            </div>
+
+                            <div class="experience-location">
+                                <i class="bi bi-geo-alt"></i>
+                                Bengaluru, India
+                            </div>
+
+                        </div>
+
+
+                        <div class="experience-card">
+
+                            <div class="company-logo">
+                                <img
+                                    src="assets/bluefield.png"
+                                    alt="Bluefield Technologies"
+                                />
+                            </div>
+
+                            <div class="company-name">
+                                Bluefield Technologies Pvt Ltd
+                            </div>
+
+                            <div class="job-title">
+                                DevOps Engineer
+                            </div>
+
+                            <ul>
+
+                                <li>
+                                    Built CI/CD pipelines using Jenkins
+                                    and Maven
+                                </li>
+
+                                <li>
+                                    Implemented Git branching and
+                                    merging strategies
+                                </li>
+
+                                <li>
+                                    Provisioned infrastructure using Terraform
+                                </li>
+
+                                <li>
+                                    Automated deployments to QA,
+                                    UAT & Production
+                                </li>
+
+                                <li>
+                                    Managed IAM users and roles
+                                </li>
+
+                                <li>
+                                    Deployed applications on Apache & Tomcat
+                                </li>
+
+                                <li>
+                                    Handled AWS support cases &
+                                    cost optimization
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 EDUCATION
+            ===================================================== -->
+
+            <section class="resume-section">
+
+                <div class="section-heading">
+
+                    <div class="section-icon section-icon-education">
+                        <i class="bi bi-mortarboard-fill"></i>
+                    </div>
+
+                    <div>
+                        <h2 class="section-title">
+                            Education
+                        </h2>
+
+                        <p class="section-subtitle">
+                            Academic background
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="education-card">
+
+                    <div class="education-period">
+
+                        <div class="education-year">
+                            2014 - 2018
+                        </div>
+
+                        <div class="education-degree">
+                            B.Tech<br>
+                            Mechanical Engineering
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <div class="education-name">
+                            PBR VITS
+                        </div>
+
+                        <div class="education-location">
+                            Kavali, AP
+                        </div>
+
+                        <p class="education-description">
+                            Mechanical Engineering is the branch of engineering
+                            that designs, analyzes, and maintains mechanical
+                            systems to develop innovative and efficient
+                            solutions for real-world industrial and
+                            technological challenges.
+                        </p>
+
+                    </div>
+
+
+                    <div class="education-icon icon-kubernetes">
+                        <i class="bi bi-mortarboard-fill"></i>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 TECHNICAL SKILLS
+            ===================================================== -->
+
+            <section class="resume-section">
+
+                <div class="section-heading">
+
+                    <div class="section-icon section-icon-skills">
+                        <i class="bi bi-gear-fill"></i>
+                    </div>
+
+                    <div>
+                        <h2 class="section-title">
+                            Technical Skills
+                        </h2>
+
+                        <p class="section-subtitle">
+                            Tools and technologies I work with
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Filters -->
+
+                <div class="skill-filter">
+
+                    <span class="active">All</span>
+                    <span>Cloud</span>
+                    <span>DevOps</span>
+                    <span>Containers</span>
+                    <span>Infrastructure</span>
+                    <span>Monitoring</span>
+                    <span>Scripting</span>
+                    <span>Others</span>
+
+                </div>
+
+
+                <!-- Skill Cards -->
+
+                <div class="skills-grid">
+
+
+                    <!-- AWS -->
+
+                    <div class="skill-card">
+                        <div class="skill-icon icon-aws">
+                            <i class="bi bi-cloud-fill"></i>
+                        </div>
+                        <div class="skill-name">AWS</div>
+                    </div>
+
+
+                    <!-- Kubernetes -->
+
+                    <div class="skill-card">
+                        <div class="skill-icon icon-kubernetes">
+                            <i class="bi bi-boxes"></i>
+                        </div>
+                        <div class="skill-name">Kubernetes</div>
+                    </div>
+
+
+                    <!-- Docker -->
+
+                    <div class="skill-card">
+                        <div class="skill-icon icon-docker">
+                            <i class="bi bi-box"></i>
+                        </div>
+                        <div class="skill-name">Docker</div>
+                    </div>
+
+
+                    <!-- Terraform -->
+
+                    <div class="skill-card">
+                        <div class="skill-icon icon-terraform">
+                            <i class="bi bi-diagram-3-fill"></i>
+                        </div>
+                        <div class="skill-name">Terraform</div>
+                    </div>
+
+
+                    <!-- Jenkins -->
+
+                    <div class="skill-card">
+                        <div class="skill-icon icon-jenkins">
+                            <i class="bi bi-gear-wide-connected"></i>
+                        </div>
+                        <div class="skill-name">Jenkins</div>
+                    </div>
+
+
+                    <!-- Ansible -->
+
+                    <div class="skill-card">
+                        <div class="skill-icon icon-ansible">
+                            <i class="bi bi-cpu"></i>
+                        </div>
+                        <div class="skill-name">Ansible</div>
+                    </div>
+
+
+                    <!-- Git -->
+
+                    <div class="skill-card">
+                        <div class="skill-icon icon-git">
+                            <i class="bi bi-git"></i>
+                        </div>
+                        <div class="skill-name">Git</div>
+                    </div>
+
+
+                    <!-- GitHub -->
+
+                    <div class="skill-card">
+                        <div class="skill-icon icon-github">
+                            <i class="bi bi-github"></i>
+                        </div>
+                        <div class="skill-name">GitHub</div>
+                    </div>
+
+
+                    <!-- Linux -->
+
+                    <div class="skill-card">
+                        <div class="skill-icon icon-linux">
+                            <i class="bi bi-terminal-fill"></i>
+                        </div>
+                        <div class="skill-name">Linux</div>
+                    </div>
+
+
+                    <!-- ECS/EKS -->
+
+                    <div class="skill-card">
+                        <div class="skill-icon icon-ecs">
+                            <i class="bi bi-layers-fill"></i>
+                        </div>
+                        <div class="skill-name">ECS / EKS</div>
+                    </div>
+
+
+                    <!-- EC2 -->
+
+                    <div class="skill-card">
+                        <div class="skill-icon icon-ec2">
+                            <i class="bi bi-server"></i>
+                        </div>
+                        <div class="skill-name">EC2</div>
+                    </div>
+
+
+                    <!-- S3 -->
+
+                    <div class="skill-card">
+                        <div class="skill-icon icon-s3">
+                            <i class="bi bi-database-fill"></i>
+                        </div>
+                        <div class="skill-name">S3</div>
+                    </div>
+
+
+                    <!-- RDS -->
+
+                    <div class="skill-card">
+                        <div class="skill-icon icon-rds">
+                            <i class="bi bi-database"></i>
+                        </div>
+                        <div class="skill-name">RDS</div>
+                    </div>
+
+
+                    <!-- VPC -->
+
+                    <div class="skill-card">
+                        <div class="skill-icon icon-vpc">
+                            <i class="bi bi-diagram-2-fill"></i>
+                        </div>
+                        <div class="skill-name">VPC</div>
+                    </div>
+
+
+                    <!-- ALB -->
+
+                    <div class="skill-card">
+                        <div class="skill-icon icon-alb">
+                            <i class="bi bi-share-fill"></i>
+                        </div>
+                        <div class="skill-name">ALB</div>
+                    </div>
+
+
+                    <!-- CloudFront -->
+
+                    <div class="skill-card">
+                        <div class="skill-icon icon-cloudfront">
+                            <i class="bi bi-globe2"></i>
+                        </div>
+                        <div class="skill-name">CloudFront</div>
+                    </div>
+
+
+                    <!-- Nagios -->
+
+                    <div class="skill-card">
+                        <div class="skill-icon icon-nagios">
+                            <i class="bi bi-activity"></i>
+                        </div>
+                        <div class="skill-name">Nagios</div>
+                    </div>
+
+
+                    <!-- Grafana -->
+
+                    <div class="skill-card">
+                        <div class="skill-icon icon-grafana">
+                            <i class="bi bi-bar-chart-fill"></i>
+                        </div>
+                        <div class="skill-name">Grafana</div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SCRIPTING & CONFIGURATION
+            ===================================================== -->
+
+            <section class="resume-section">
+
+                <div class="section-heading">
+
+                    <div class="section-icon section-icon-script">
+                        <i class="bi bi-code-slash"></i>
+                    </div>
+
+                    <div>
+                        <h2 class="section-title">
+                            Scripting & Configuration
+                        </h2>
+
+                        <p class="section-subtitle">
+                            Languages and configuration formats
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="skills-grid" style="grid-template-columns: repeat(6, 1fr);">
+
+
+                    <!-- PowerShell -->
+
+                    <div class="skill-card">
+                        <div class="skill-icon icon-powershell">
+                            <i class="bi bi-terminal"></i>
+                        </div>
+                        <div class="skill-name">PowerShell</div>
+                    </div>
+
+
+                    <!-- YAML -->
+
+                    <div class="skill-card">
+                        <div class="skill-icon icon-yaml">
+                            <i class="bi bi-filetype-yml"></i>
+                        </div>
+                        <div class="skill-name">YAML</div>
+                    </div>
+
+
+                    <!-- JSON -->
+
+                    <div class="skill-card">
+                        <div class="skill-icon icon-json">
+                            <i class="bi bi-filetype-json"></i>
+                        </div>
+                        <div class="skill-name">JSON</div>
+                    </div>
+
+
+                    <!-- ShellScript -->
+
+                    <div class="skill-card">
+                        <div class="skill-icon icon-shell">
+                            <i class="bi bi-terminal-fill"></i>
+                        </div>
+                        <div class="skill-name">ShellScript</div>
+                    </div>
+
+
+                    <!-- Groovy -->
+
+                    <div class="skill-card">
+                        <div class="skill-icon icon-groovy">
+                            <i class="bi bi-code-square"></i>
+                        </div>
+                        <div class="skill-name">Groovy</div>
+                    </div>
+
+
+                    <!-- Bash -->
+
+                    <div class="skill-card">
+                        <div class="skill-icon icon-bash">
+                            <i class="bi bi-terminal"></i>
+                        </div>
+                        <div class="skill-name">Bash</div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="resume-footer mt-auto">
+
+    <div class="container px-5">
+
+        <div class="d-flex justify-content-between align-items-center">
+
+            <p class="resume-footer-text">
+                Copyright © Vamsi Krishna Konidala 2026
+            </p>
+
+            <p class="resume-footer-text">
+                DevOps Engineer | AWS | Kubernetes
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- Bootstrap JS -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+<script src="js/scripts.js"></script>
 
 </body>
-
 </html>
